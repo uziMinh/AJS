@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ng-filter Uppercase</h2>
+    <hr>
+    <div ng-app="myapp" ng-controller="myctr">
+        <h3>Student names: </h3>
+        <ul>
+            <li ng-repeat="x in list">{{x|uppercase}}</li>
+        </ul>
+        <hr>
+        <p>Search name: <input ng-model='search'></p>
+        <hr>
+        <h3>Result:</h3>
+        <ul>
+            <li ng-repeat="x in list|filter:search">{{x}}</li>
+        </ul>
+    </div>
+<script>
+    angular.module("myapp", []).controller("myctr",function ($scope){
+        $scope.list = ["Khoa Tran", "Kien Van", "Hoan Doan", "Tin Van", "Nhat Minh", "Owen Nguyen"];
+    })
+</script>
+</body>
+</html>

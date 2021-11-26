@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <h2>ng-filter Date demo</h2>
+      <hr>
+      <div ng-app="myapp" ng-controller="myctr">
+          <p>Date = {{ today|date : "dd.MM.y" }}</p>
+          <p>Date = {{ today|date : "short" }}</p>
+          <p>Date = {{ today|date : "medium" }}</p>
+          <p>Date = {{ today|date : "shortDate" }}</p>
+          <p>Date = {{ today|date : "longDate" }}</p>
+          <p>Date = {{ today|date : "fullDate" }}</p>
+          <p>Date = {{ today|date : "mediumDate" }}</p>
+      </div>
+  </body>
+  <script>
+      angular.module("myapp", []).controller("myctr",function($scope){
+          $scope.today= new Date();
+      })
+  </script>
+</html>
