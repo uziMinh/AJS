@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <h2>ng-route demo</h2>
+    <hr>
+    <div id="menu">
+        <ul>
+            <li><a href="#/!">Lily</a></li>
+            <li><a href="#!b">Dahlia</a></li>
+            <li><a href="#!c">Orchids</a></li>
+        </ul>
+    </div>
+    <div ng-view></div>
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+            .when("/", { templateUrl: "d02-a.html" })
+            .when("/b", { templateUrl: "d02-b.html" })
+            .when("c", { templateUrl: "d02-c.html" })
+        })
+    </script>
+</body>
+</html>
