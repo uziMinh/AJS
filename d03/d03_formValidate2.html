@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validate 2 demo</title>
+    <style>
+        input.ng-pristine {
+            background-color: yellow;
+        }
+
+        input.ng-touched.ng-invalid {
+            background-color: red;
+        }
+
+        input.ng-touched.ng-valid {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Validation Example</h2>
+    <hr/>
+
+    <form ng-app="myApp" ng-controller="validateCtrl" name="myForm" action="d03_validMail.html" novalidate>
+        <p>Username: 
+            <br>
+            <input type="text" name="user" ng-model="user" required />
+            <span style="color:red" ng-show="myform.user.$dirty && myform.user.$invalid">
+                <span ng-show="myForm.user.$error.required">Username is required.</span>
+            </span>
+        </p>
+        <p>Email:
+            <br>
+            <input type="email" name="email" ng-model="email" required>
+            <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                <span ng-show="myform.email.$error.required">Email is required.</span>
+                <span ng-show="myForm.email.$error.email">Invalid Email address.</span>
+            </span>
+        </p>
+        <p>Final Mark:
+            <br>
+            <input type="number" name="txtMark" ng-model="mark" min="0" max="100" required>
+            <span style="color: red;" ng-show="myform.txtMark.$dirty && myForm.txtMark.$invalid">
+                <span ng-show="myForm.txtMark.$error.required">Mark is required.</span>
+                <span ng-show="myForm.txtMark.$invalid">Invalid final mark.</span>
+            </span>
+        </p>
+    </form>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('validateCtrl', function ($scope) {
+            $scope.user = 'minh';
+            $scope.email = 'minh123@gmail.com';
+        });
+    </script>
+</body>
+</html>

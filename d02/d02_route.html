@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>    
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+<!--buoc 2. nhung thu vien angularjs-route tu duong link CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"> </script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +28,7 @@
             $routeProvider
             .when("/", { templateUrl: "d02-a.html" })
             .when("/b", { templateUrl: "d02-b.html" })
-            .when("c", { templateUrl: "d02-c.html" })
+            .when("/c", { templateUrl: "d02-c.html" })
         })
     </script>
 </body>
