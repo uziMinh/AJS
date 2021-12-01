@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Value Injection demo</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="myControl">
+      <h2>Value demo</h2>
+      <hr />
+      <p>Hello, Mr/Mrs <strong>{{eName}}</strong>.</p>
+    </div>
+    <script>
+      var app = angular.module("myApp", []);
+      app.value("name", "Nhat Minh");
+      app.controller("myControl", function ($scope, name) {
+        $scope.eName = name;
+      });
+    </script>
+  </body>
+</html>
